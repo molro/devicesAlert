@@ -19,6 +19,18 @@ class Device:
     @property
     def emergency_phone(self):
         return self.__emergency_phone
+class Phone:
+    def __init__(self, id_phone, phone):
+        self.__id_phone = id_phone
+        self.__phone = phone
+    
+    @property
+    def id_phone(self):
+        return self.__id_phone
+    
+    @property
+    def phone(self):
+        return self.__phone
 
 devices_dir = './devices/'
 phones_dir = './phones/'
@@ -49,7 +61,9 @@ def read_phone(array, dir):
         with open(inbox) as file:
             try:
                 data = json.load(file)
-                phone_list.append(data)
+                numeros = list(data.values())
+                phone = Phone(numeros[0],numeros[1])
+                phone_list.append(phone)
             except:
                 print('No hay teléfono')
                 raise
@@ -63,11 +77,10 @@ def read_devices(array, dir):
         with open (inbox) as file:
             try: 
                 data = json.load(file)
-                valores = data.values()
-                propiedades = list(valores)
+                propiedades = list(data.values())
                 for phone in phone_list:
-                    if(phone.get('id_phone') == propiedades[3]):
-                        emergency_phone =phone.get('phone')
+                    if(phone.id_phone == propiedades[3]):
+                        emergency_phone = phone.phone
                 object = Device(propiedades[0],propiedades[1],propiedades[2], emergency_phone)
                 check_alert(object.device_status, object.device_name, object.emergency_phone)
                 object_list.append(object)
