@@ -10,6 +10,7 @@
 - os, time, abc y json
 
 ## Estructura General
+- [Ver Requisitos](https://github.com/molro/devicesAlert/blob/main/requisitos.md)
 - ``\devices`` -> Directorio donde se alojarán los dipositivos.  
 - ``\phones``-> Directorio donde se alojarán los "Teléfonos".  
 
