@@ -14,12 +14,14 @@
 - ``\phones``-> Directorio donde se alojarán los "Teléfonos".  
 
 **Plantillas**
+### Dispositivos
 - ``\devices\device_template.json`` -> Archivo para simular los dispositivos:
     - "id_device": String -> "dev01", referencia: Id del teléfono asignado de contacto    
     - "device_name": String -> "Dispositivo 1", referencia: Nombre del dispositivo
     - "device_status": String -> "Conectado", referencia: Por defecto, Conectado y representa el estado funcional  
     - "emergency_phone": String -> "Phone03", referencia: Id del teléfono asignado de contacto  
-- ``\phone\phone_template.json`` -> Archivo para simular los dispositivos:
+### Teléfonos
+- ``\phone\phone_template.json`` -> Archivo para simular los teléfonos:
     - "id_phone": String -> "Phone 01", referencia: Id del teléfono asignado de contacto    
     - "phone": Int  ->  662233123, referencia: Número el cúal se asigna a los dispositivos
  
