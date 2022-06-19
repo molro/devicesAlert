@@ -1,4 +1,6 @@
+from abc import abstractmethod
 import json, os, time
+## Clase para implementar los dispositivos
 class Device: 
     def __init__(self, id_device, device_name, device_status, emergency_phone):
         self.__id_device = id_device
@@ -6,17 +8,22 @@ class Device:
         self.__device_status = device_status
         self.__emergency_phone = emergency_phone
     @property
+    @abstractmethod
+    @abstractmethod
     def id_device(self):
         return self.__id_device
 
     @property
+    @abstractmethod
     def device_name(self):
         return self.__device_name
     @property
+    @abstractmethod
     def device_status(self):
         return self.__device_status
     
     @property
+    @abstractmethod
     def emergency_phone(self):
         return self.__emergency_phone
 class Phone:
@@ -25,10 +32,12 @@ class Phone:
         self.__phone = phone
     
     @property
+    @abstractmethod
     def id_phone(self):
         return self.__id_phone
     
     @property
+    @abstractmethod
     def phone(self):
         return self.__phone
 
@@ -99,6 +108,6 @@ time_status = 1
 while True:
     listen_devices(1)
     time_status += 1
-    if(time_status % 60 == 0):
+    if(time_status % 2 == 0):
         device_to_check = read_devices(devices, devices_dir)
         check_status(device_to_check)

@@ -7,7 +7,7 @@
 - Python 3.10.4
 
 **Librerias Utilizadas**  
-- os, time y json
+- os, time, abc y json
 
 ## Estructura General
 - ``\devices`` -> Directorio donde se alojarán los dipositivos.  
